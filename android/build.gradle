@@ -1,0 +1,43 @@
+group 'com.dotscoket.readercard.acs_card_reader_thailand'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+}
+
+dependencies {
+    implementation files('libs/acssmc-1.1.6.jar')
+    implementation("com.google.guava:guava:31.0.1-jre")
+    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'com.google.android.gms:play-services-basement:17.6.0'
+     implementation'androidx.work:work-runtime:2.7.1'
+}
